@@ -2,11 +2,12 @@ import os
 import streamlit as st
 import nltk
 
-# ✅ Set NLTK data directory for Streamlit Cloud compatibility
-NLTK_DATA_DIR = os.path.join(os.getcwd(), "nltk_data")
+# Set NLTK download path to a temp directory (Streamlit Cloud requirement)
+NLTK_DATA_DIR = "/tmp/nltk_data"
 os.makedirs(NLTK_DATA_DIR, exist_ok=True)
 nltk.data.path.append(NLTK_DATA_DIR)
 
+# Download punkt tokenizer
 @st.cache_resource
 def download_nltk_punkt():
     nltk.download("punkt", download_dir=NLTK_DATA_DIR)
