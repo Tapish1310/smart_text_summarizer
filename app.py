@@ -1,5 +1,14 @@
 import os
 import streamlit as st
+import nltk
+
+# ✅ Download NLTK punkt tokenizer only once (required on Streamlit Cloud)
+@st.cache_resource
+def download_nltk_punkt():
+    nltk.download('punkt')
+
+download_nltk_punkt()
+
 from summarizer import (
     extract_text_from_file,
     load_model,

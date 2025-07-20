@@ -1,9 +1,0 @@
-streamlit
-transformers
-evaluate
-nltk
-python-docx
-python-pptx
-PyMuPDF
-reportlab
-torch
